@@ -201,13 +201,4 @@ class  resnet50_Head(nn.Module):
         hm = self.cls_head(x).sigmoid_()  # 分类热力图部分，使用sigmoid归一化至0～1内
         wh = self.wh_head(x)  # 框宽高回归
         offset = self.reg_head(x)  # 中心点坐标回归
-        return hm, wh, offset  
-        
-    
-
-
-
-
-
-
-
+        return hm, wh, offset 
