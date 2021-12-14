@@ -44,6 +44,3 @@ def reg_l1_loss(pred, target, mask):
     loss = F.l1_loss(pred * expand_mask, target * expand_mask, reduction = 'sum')  # 仅计算正样本的损失
     loss = loss / (mask.sum() + 1e-4)
     return loss
-
-
-
